@@ -1,22 +1,22 @@
 package ru.nic.wh.web_ctl.domain;
 
+import java.util.List;
+
 public class Task {
 
-	private final long id;
-	private final long lastStepInTask;
-	private long stepInTask;
+	private long id;
+	private int stepInTask;
+	private int lastStepInTask;
+	private List<SubTask> subTasks;
 
-	public Task(long id, long lastStepInTask, long stepInTask) {
-		this.id = id;
-		this.lastStepInTask = lastStepInTask;
-		this.stepInTask = stepInTask;
+	public Task() {
 	}
 
-	public long getStepInTask() {
+	public int getStepInTask() {
 		return stepInTask;
 	}
 
-	public void setStepInTask(long stepInTask) {
+	public void setStepInTask(int stepInTask) {
 		this.stepInTask = stepInTask;
 	}
 
@@ -24,7 +24,17 @@ public class Task {
 		return id;
 	}
 
-	public long getLastStepInTask() {
+	public int getLastStepInTask() {
 		return lastStepInTask;
+	}
+
+	public List<SubTask> getSubTasks() {
+		return subTasks;
+	}
+
+	@Override
+	public String toString() {
+		return "Task [id=" + id + ", stepInTask=" + stepInTask + ", lastStepInTask=" + lastStepInTask + ", subTasks="
+				+ subTasks + "]";
 	}
 }

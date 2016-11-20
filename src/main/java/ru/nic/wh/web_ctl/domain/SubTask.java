@@ -10,13 +10,6 @@ public class SubTask {
 	public SubTask() {
 	}
 
-	public SubTask(long id, String address, String command, String args) {
-		this.id = id;
-		this.address = address;
-		this.command = command;
-		this.args = args;
-	}
-
 	public long getId() {
 		return id;
 	}

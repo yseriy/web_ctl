@@ -1,4 +1,4 @@
-package ru.nic.wh.web_ctl;
+package ru.nic.wh.web_ctl.config;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableRabbit
-public class WebCtlReceiverConfig {
+public class WebCtlReceiverConfig  {
 
 	@Bean
 	public Queue testQueue() {
@@ -30,9 +30,9 @@ public class WebCtlReceiverConfig {
 
 	@Bean
 	public ConnectionFactory rabbitConnectionFactory() {
-		CachingConnectionFactory connectionFactory = new CachingConnectionFactory("localhost");
-		connectionFactory.setUsername("guest");
-		connectionFactory.setPassword("guest");
+		CachingConnectionFactory connectionFactory = new CachingConnectionFactory("tst202-queue00.vm.rcdn.ru");
+		connectionFactory.setUsername("fmqueue");
+		connectionFactory.setPassword("qwerty1");
 		return connectionFactory;
 	}
 }

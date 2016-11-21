@@ -2,8 +2,11 @@ package ru.nic.wh.web_ctl.domain;
 
 import java.util.List;
 
+import javax.validation.constraints.Min;
+
 public class Task {
 
+	@Min(10)
 	private long id;
 	private int stepInTask;
 	private int lastStepInTask;
